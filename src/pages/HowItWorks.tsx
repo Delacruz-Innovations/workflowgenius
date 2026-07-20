@@ -1,0 +1,66 @@
+import { useEffect } from "react"
+import { useJsonLd } from "../lib/useJsonLd"
+import PageHero from "../components/PageHero"
+import AssessmentJourney from "../components/how-it-works/AssessmentJourney"
+import Deliverables from "../components/how-it-works/Deliverables"
+import WhoItsFor from "../components/how-it-works/WhoItsFor"
+import WhyUs from "../components/how-it-works/WhyUs"
+import FAQ from "../components/how-it-works/FAQ"
+import WhyChooseUs from "../components/how-it-works/WhyChooseUs"
+import FinalCallToAction from "../components/how-it-works/FinalCallToAction"
+import AssessmentForm from "../components/how-it-works/AssessmentForm"
+import TrustBar from "../components/how-it-works/TrustBar"
+import CTABand from "../components/CTABand"
+import { journeyCta } from "../data/howItWorks"
+import { images } from "../data/content"
+
+export default function HowItWorks() {
+  useEffect(() => {
+    document.title = "How the BPE360™ Assessment Works | Workflow Genius"
+  }, [])
+
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://workflowgenius.co/" },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "How It Works",
+        item: "https://workflowgenius.co/how-it-works",
+      },
+    ],
+  })
+
+  return (
+    <>
+      <PageHero
+        eyebrow="The Process"
+        title="How the Assessment Works"
+        image={images.howItWorksHero}
+        imageAlt="Dark analytics dashboard close-up"
+        scrollTarget="#process"
+      />
+
+      <AssessmentJourney />
+      <Deliverables />
+      <WhoItsFor />
+      <WhyUs />
+      <CTABand
+        heading={journeyCta.heading}
+        supporting={journeyCta.lines.join(" ")}
+        button={journeyCta.button}
+      />
+      <FAQ />
+      <WhyChooseUs />
+      <FinalCallToAction />
+
+      <section id="assessment-form" className="px-6 py-24 md:px-10 md:py-32">
+        <AssessmentForm />
+      </section>
+
+      <TrustBar />
+    </>
+  )
+}
