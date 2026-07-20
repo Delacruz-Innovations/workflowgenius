@@ -1,26 +1,24 @@
 import { motion } from "framer-motion"
 import { fadeIn, fadeUp, stagger, viewport } from "../lib/motion"
 import { reality, images } from "../data/content"
-import Eyebrow from "./ui/Eyebrow"
 import StatementList from "./ui/StatementList"
 import TagGrid from "./ui/TagGrid"
 
 export default function Reality() {
   return (
-    <section id="reality" className="border-t border-white/10 px-6 py-24 md:px-10 md:py-32">
-      <Eyebrow>{reality.eyebrow}</Eyebrow>
+    <section id="reality" className="border-t border-white/10 px-4 py-4 md:px-10">
 
       <motion.h2
         initial="hidden"
         whileInView="show"
         viewport={viewport}
         variants={fadeUp}
-        className="font-display max-w-2xl text-3xl leading-[1.1] font-semibold whitespace-pre-line text-white md:text-5xl"
+        className="font-display max-w-2xl text-4xl leading-[1.05] font-semibold whitespace-pre-line text-white md:text-6xl"
       >
         {reality.h2}
       </motion.h2>
 
-      <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-12">
+      <div className="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-6">
         <div className="sm:order-1">
           <StatementList
             lines={reality.lines}
@@ -51,7 +49,7 @@ export default function Reality() {
         </motion.div>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 gap-16 md:grid-cols-2">
+      <div className="mt-3 grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
           <StatementList
             lines={reality.spiral}
@@ -63,7 +61,7 @@ export default function Reality() {
             whileInView="show"
             viewport={viewport}
             variants={stagger(0.08)}
-            className="mt-6 space-y-3 border-t border-white/10 pt-6"
+            className="mt-3 space-y-3 border-t border-white/10 pt-6"
           >
             {reality.cost.map((line, i) => (
               <motion.p

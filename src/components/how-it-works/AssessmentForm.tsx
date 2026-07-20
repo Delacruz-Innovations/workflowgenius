@@ -1,7 +1,6 @@
 import { useState, type FormEvent, type InputHTMLAttributes } from "react"
 import { motion } from "framer-motion"
 import { Check, ShieldCheck } from "lucide-react"
-import { fadeUp, viewport } from "../../lib/motion"
 import { leadFormFields, industries, employeeBands } from "../../data/howItWorks"
 
 type FormState = {
@@ -125,7 +124,7 @@ export default function AssessmentForm() {
         <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/25 text-white">
           <Check size={20} />
         </span>
-        <h3 className="font-display mt-6 text-2xl font-semibold text-white">
+        <h3 className="font-display mt-3 text-2xl font-semibold text-white">
           Thank you, {form.fullName.split(" ")[0]}.
         </h3>
         <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/55">
@@ -137,15 +136,7 @@ export default function AssessmentForm() {
   }
 
   return (
-    <motion.form
-      initial="hidden"
-      whileInView="show"
-      viewport={viewport}
-      variants={fadeUp}
-      onSubmit={handleSubmit}
-      noValidate
-      className="mx-auto max-w-3xl rounded-sm border border-white/10 bg-white/[0.02] p-6 md:p-10"
-    >
+    <form onSubmit={handleSubmit} noValidate className="w-full">
       <h3 className="font-display text-2xl font-semibold text-white md:text-3xl">
         {leadFormFields.heading}
       </h3>
@@ -153,7 +144,7 @@ export default function AssessmentForm() {
         {leadFormFields.supporting}
       </p>
 
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
         <Field
           id="fullName"
           label="Full Name"
@@ -266,7 +257,7 @@ export default function AssessmentForm() {
         </div>
       </div>
 
-      <label className="mt-8 flex items-start gap-3 text-xs leading-relaxed text-white/50">
+      <label className="mt-3 flex items-start gap-3 text-xs leading-relaxed text-white/50">
         <input
           type="checkbox"
           checked={form.consent}
@@ -282,15 +273,15 @@ export default function AssessmentForm() {
 
       <button
         type="submit"
-        className="mt-8 w-full bg-white px-8 py-4 text-xs font-medium tracking-[0.1em] text-black uppercase transition-transform hover:scale-[1.01] sm:w-auto"
+        className="mt-3 w-full bg-white px-8 py-4 text-xs font-medium tracking-[0.1em] text-black uppercase transition-transform hover:scale-[1.01] sm:w-auto"
       >
         Book My Assessment
       </button>
 
-      <p className="mt-6 flex items-center gap-2 text-xs text-white/55">
+      <p className="mt-3 flex items-center gap-2 text-xs text-white/55">
         <ShieldCheck size={13} />
         Protected against spam. Your details are never shared with third parties.
       </p>
-    </motion.form>
+    </form>
   )
 }

@@ -13,11 +13,9 @@ export default function BusinessImpact() {
   return (
     <>
       <PageHero
-        eyebrow="Competitor & Impact Analysis"
         title="Your Biggest Competitor Isn't Standing Still"
         image={images.impactHero}
         imageAlt="Dark cityscape at night"
-        scrollTarget="#competitors"
       />
       <CompetitorAnalysis />
       <ImpactAnalysis />

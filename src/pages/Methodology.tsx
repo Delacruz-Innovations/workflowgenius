@@ -16,11 +16,9 @@ export default function Methodology() {
   return (
     <>
       <PageHero
-        eyebrow="Our Methodology"
         title="You Can't Improve What You Haven't Diagnosed"
         image={images.methodologyHero}
         imageAlt="Dark blueprint-style architectural structure"
-        scrollTarget="#analysis"
       />
       <GapAnalysis />
       <BPE360Intro />

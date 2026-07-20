@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { MotionConfig } from "framer-motion"
 import Layout from "./components/Layout"
 import ScrollToHash from "./components/ScrollToHash"
-import PageLoader from "./components/PageLoader"
+import CinematicEntrance from "./components/CinematicEntrance"
+import SiteIntro from "./components/SiteIntro"
 
 const Home = lazy(() => import("./pages/Home"))
 const TheReality = lazy(() => import("./pages/TheReality"))
@@ -15,8 +16,9 @@ function App() {
   return (
     <MotionConfig reducedMotion="user">
       <BrowserRouter>
+        <SiteIntro />
         <ScrollToHash />
-        <Suspense fallback={<PageLoader />}>
+        <Suspense fallback={<CinematicEntrance type={3} />}>
           <Routes>
             <Route element={<Layout />}>
               <Route index element={<Home />} />

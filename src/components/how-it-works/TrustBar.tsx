@@ -9,7 +9,7 @@ export default function TrustBar() {
       whileInView="show"
       viewport={viewport}
       variants={stagger(0.08)}
-      className="grid grid-cols-1 gap-x-6 gap-y-10 border-t border-white/10 px-6 py-16 sm:grid-cols-2 md:grid-cols-4 md:px-10"
+      className="grid grid-cols-1 gap-x-6 gap-y-10 border-t border-white/10 px-4 py-16 sm:grid-cols-2 md:grid-cols-4 md:px-10"
     >
       {trustBar.map((item) => (
         <motion.div key={item.title} variants={fadeUp} className="border-l border-white/10 pl-5">

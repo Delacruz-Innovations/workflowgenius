@@ -2,26 +2,27 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { fadeUp, viewport } from "../../lib/motion"
 import { finalCallToAction } from "../../data/howItWorks"
-import Eyebrow from "../ui/Eyebrow"
 import StatementList from "../ui/StatementList"
+import { useAssessmentModal } from "../../context/AssessmentModalContext"
 
 export default function FinalCallToAction() {
+  const { open } = useAssessmentModal()
+
   return (
-    <section className="border-t border-white/10 px-6 py-24 text-center md:px-10 md:py-32">
+    <section className="border-t border-white/10 px-4 py-4 text-center md:px-10">
       <div className="mx-auto max-w-3xl">
-        <Eyebrow>{finalCallToAction.eyebrow}</Eyebrow>
 
         <motion.h2
           initial="hidden"
           whileInView="show"
           viewport={viewport}
           variants={fadeUp}
-          className="font-display text-3xl leading-[1.1] font-semibold text-white md:text-5xl"
+          className="font-display text-4xl leading-[1.05] font-semibold text-white md:text-6xl"
         >
           {finalCallToAction.h2}
         </motion.h2>
 
-        <div className="mt-10">
+        <div className="mt-4">
           <StatementList
             lines={finalCallToAction.body}
             lineClassName="text-base leading-relaxed text-white/60 md:text-lg"
@@ -29,7 +30,7 @@ export default function FinalCallToAction() {
           />
         </div>
 
-        <div className="mt-10">
+        <div className="mt-4">
           <StatementList
             lines={finalCallToAction.before}
             lineClassName="text-sm text-white/45"
@@ -37,7 +38,7 @@ export default function FinalCallToAction() {
           />
         </div>
 
-        <div className="mt-8">
+        <div className="mt-3">
           <StatementList
             lines={finalCallToAction.closing}
             lineClassName="text-base leading-relaxed text-white/70 md:text-lg"
@@ -50,10 +51,11 @@ export default function FinalCallToAction() {
           whileInView="show"
           viewport={viewport}
           variants={fadeUp}
-          className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+          className="mt-4 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
-          <a
-            href="#assessment-form"
+          <button
+            type="button"
+            onClick={open}
             className="group inline-flex items-center justify-center gap-3 bg-white px-8 py-4 text-xs font-medium tracking-[0.1em] text-black uppercase transition-transform hover:scale-[1.02]"
           >
             {finalCallToAction.primary.button}
@@ -61,7 +63,7 @@ export default function FinalCallToAction() {
               size={14}
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
-          </a>
+          </button>
           <a
             href="#"
             className="inline-flex items-center justify-center gap-3 border border-accent px-8 py-4 text-xs font-medium tracking-[0.1em] text-accent-light uppercase transition-colors hover:bg-accent/10"

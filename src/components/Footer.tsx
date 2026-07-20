@@ -5,7 +5,7 @@ import { footerMicrocopy } from "../data/howItWorks"
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 px-6 pt-16 pb-8 md:px-10">
+    <footer className="border-t border-white/10 px-4 pt-6 pb-8 md:px-10">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -24,7 +24,7 @@ export default function Footer() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={viewport}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        className="font-display mt-8 text-center text-[12vw] leading-[0.9] font-extrabold tracking-tight text-white select-none md:text-[110px]"
+        className="font-display mt-3 text-center text-4xl leading-[0.9] font-extrabold tracking-tight text-white select-none sm:text-6xl md:text-[110px]"
       >
         {brand.name}
       </motion.h2>
@@ -36,7 +36,7 @@ export default function Footer() {
         whileInView="show"
         viewport={viewport}
         variants={fadeUp}
-        className="mt-10 flex flex-col-reverse items-center justify-between gap-6 border-t border-white/10 pt-8 text-xs tracking-wide text-white/60 md:flex-row"
+        className="mt-4 flex flex-col-reverse items-center justify-between gap-6 border-t border-white/10 pt-8 text-xs tracking-wide text-white/60 md:flex-row"
       >
         <p>&copy; 2026 {brand.domain}. All rights reserved.</p>
 

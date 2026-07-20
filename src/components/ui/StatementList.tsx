@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { stagger, viewport } from "../../lib/motion"
+import { fadeUp, viewport } from "../../lib/motion"
 
 export default function StatementList({
   lines,
@@ -11,29 +11,14 @@ export default function StatementList({
   lineClassName?: string
 }) {
   return (
-    <motion.div
+    <motion.p
       initial="hidden"
       whileInView="show"
       viewport={viewport}
-      variants={stagger(0.09)}
-      className={className}
+      variants={fadeUp}
+      className={`${lineClassName} ${className}`}
     >
-      {lines.map((line, i) => (
-        <motion.p
-          key={i}
-          variants={{
-            hidden: { opacity: 0, y: 16 },
-            show: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
-            },
-          }}
-          className={lineClassName}
-        >
-          {line}
-        </motion.p>
-      ))}
-    </motion.div>
+      {lines.join(" ")}
+    </motion.p>
   )
 }

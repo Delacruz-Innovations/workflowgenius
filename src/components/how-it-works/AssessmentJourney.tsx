@@ -1,25 +1,23 @@
 import { motion } from "framer-motion"
 import { fadeUp, stagger, viewport } from "../../lib/motion"
 import { journey } from "../../data/howItWorks"
-import Eyebrow from "../ui/Eyebrow"
 import StatementList from "../ui/StatementList"
 
 export default function AssessmentJourney() {
   return (
-    <section id="process" className="border-t border-white/10 px-6 py-24 md:px-10 md:py-32">
-      <Eyebrow>{journey.eyebrow}</Eyebrow>
+    <section id="process" className="border-t border-white/10 px-4 py-4 md:px-10">
 
       <motion.h2
         initial="hidden"
         whileInView="show"
         viewport={viewport}
         variants={fadeUp}
-        className="font-display max-w-3xl text-3xl leading-[1.1] font-semibold text-white md:text-5xl"
+        className="font-display max-w-3xl text-4xl leading-[1.05] font-semibold text-white md:text-6xl"
       >
         {journey.h2}
       </motion.h2>
 
-      <div className="mt-10 max-w-2xl">
+      <div className="mt-4 max-w-2xl">
         <StatementList
           lines={journey.supporting}
           lineClassName="text-base leading-relaxed text-white/60 md:text-lg"
@@ -27,7 +25,7 @@ export default function AssessmentJourney() {
         />
       </div>
 
-      <div className="mt-10 max-w-2xl border-t border-white/10 pt-10">
+      <div className="mt-4 max-w-2xl border-t border-white/10 pt-4">
         <StatementList
           lines={journey.body}
           lineClassName="text-sm leading-relaxed text-white/55"
@@ -44,13 +42,13 @@ export default function AssessmentJourney() {
         whileInView="show"
         viewport={viewport}
         variants={stagger(0.12)}
-        className="mt-16 space-y-12"
+        className="mt-3 space-y-12"
       >
         {journey.steps.map((step, i) => (
           <motion.li
             key={step.title}
             variants={fadeUp}
-            className="grid grid-cols-1 gap-6 border-t border-white/10 pt-10 md:grid-cols-[80px_1fr]"
+            className="grid grid-cols-1 gap-6 border-t border-white/10 pt-4 md:grid-cols-[80px_1fr]"
           >
             <div className="flex items-start gap-4 md:block">
               <span className="font-display text-3xl font-semibold text-white/35 md:text-4xl">

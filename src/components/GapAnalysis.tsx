@@ -1,25 +1,23 @@
 import { motion } from "framer-motion"
 import { fadeIn, fadeUp, stagger, viewport } from "../lib/motion"
 import { gapAnalysis, images } from "../data/content"
-import Eyebrow from "./ui/Eyebrow"
 import StatementList from "./ui/StatementList"
 
 export default function GapAnalysis() {
   return (
-    <section id="analysis" className="border-t border-white/10 px-6 py-24 md:px-10 md:py-32">
-      <Eyebrow>{gapAnalysis.eyebrow}</Eyebrow>
+    <section id="analysis" className="border-t border-white/10 px-4 py-4 md:px-10">
 
       <motion.h2
         initial="hidden"
         whileInView="show"
         viewport={viewport}
         variants={fadeUp}
-        className="font-display max-w-3xl text-3xl leading-[1.1] font-semibold text-white md:text-5xl"
+        className="font-display max-w-3xl text-4xl leading-[1.05] font-semibold text-white md:text-6xl"
       >
         {gapAnalysis.h2}
       </motion.h2>
 
-      <div className="mt-14 grid grid-cols-1 gap-16 md:grid-cols-2">
+      <div className="mt-5 grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
           <motion.p
             initial="hidden"
@@ -40,7 +38,7 @@ export default function GapAnalysis() {
             {gapAnalysis.principleQuote}
           </motion.p>
 
-          <div className="mt-8">
+          <div className="mt-3">
             <StatementList
               lines={gapAnalysis.body}
               lineClassName="text-base leading-relaxed text-white/60"
@@ -69,7 +67,7 @@ export default function GapAnalysis() {
         </motion.div>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:items-center sm:gap-12">
+      <div className="mt-3 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:items-center sm:gap-6">
         <div className="sm:order-1 max-w-xl">
           <StatementList
             lines={gapAnalysis.closing}

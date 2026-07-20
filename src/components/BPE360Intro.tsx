@@ -2,7 +2,6 @@ import { motion } from "framer-motion"
 import { Check } from "lucide-react"
 import { fadeUp, stagger, viewport } from "../lib/motion"
 import { bpeIntro, images } from "../data/content"
-import Eyebrow from "./ui/Eyebrow"
 import SubHeading from "./ui/SubHeading"
 import StatementList from "./ui/StatementList"
 import SideImage from "./ui/SideImage"
@@ -11,22 +10,21 @@ export default function BPE360Intro() {
   const { newCategory } = bpeIntro
 
   return (
-    <section id="bpe360" className="border-t border-white/10 px-6 py-24 md:px-10 md:py-32">
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:items-center sm:gap-12">
+    <section id="bpe360" className="border-t border-white/10 px-4 py-4 md:px-10">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:items-center sm:gap-6">
         <div className="sm:order-1">
-          <Eyebrow>{bpeIntro.eyebrow}</Eyebrow>
 
           <motion.h2
             initial="hidden"
             whileInView="show"
             viewport={viewport}
             variants={fadeUp}
-            className="font-display max-w-xl text-3xl leading-[1.1] font-semibold text-white md:text-4xl"
+            className="font-display max-w-xl text-4xl leading-[1.05] font-semibold text-white md:text-5xl"
           >
             {bpeIntro.h2}
           </motion.h2>
 
-          <div className="mt-6">
+          <div className="mt-3">
             <StatementList
               lines={bpeIntro.supporting}
               lineClassName="font-display text-lg leading-snug text-white/80 md:text-xl"
@@ -38,7 +36,7 @@ export default function BPE360Intro() {
         <SideImage src={images.bpeIntro} alt="Dark architectural lines and structure" side="right" />
       </div>
 
-      <div className="mt-16 grid grid-cols-1 gap-16 md:grid-cols-2">
+      <div className="mt-3 grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
           <p className="text-xs tracking-[0.15em] text-white/55 uppercase">
             The improvement cycle businesses repeat
@@ -53,7 +51,7 @@ export default function BPE360Intro() {
               </span>
             ))}
           </div>
-          <div className="mt-6">
+          <div className="mt-3">
             <StatementList
               lines={bpeIntro.body}
               lineClassName="text-base leading-relaxed text-white/60"
@@ -71,7 +69,7 @@ export default function BPE360Intro() {
         </div>
       </div>
 
-      <div className="mt-16 max-w-2xl border-t border-white/10 pt-12">
+      <div className="mt-3 max-w-2xl border-t border-white/10 pt-5">
         <StatementList
           lines={bpeIntro.closing}
           lineClassName="text-base leading-relaxed text-white/60 md:text-lg"
@@ -79,9 +77,9 @@ export default function BPE360Intro() {
         />
       </div>
 
-      <div className="mt-20 border-t border-white/10 pt-16">
+      <div className="mt-3 border-t border-white/10 pt-6">
         <SubHeading>{newCategory.h3}</SubHeading>
-        <div className="mt-6 max-w-2xl">
+        <div className="mt-3 max-w-2xl">
           <StatementList
             lines={newCategory.intro}
             lineClassName="text-base leading-relaxed text-white/60"
@@ -89,7 +87,7 @@ export default function BPE360Intro() {
           />
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="rounded-sm border border-white/10 p-6">
             <p className="text-xs tracking-[0.15em] text-white/55 uppercase">
               The wrong question
@@ -127,7 +125,7 @@ export default function BPE360Intro() {
           </div>
         </div>
 
-        <div className="mt-10 max-w-xl">
+        <div className="mt-4 max-w-xl">
           <StatementList
             lines={newCategory.closing}
             lineClassName="text-base leading-relaxed text-white/60"

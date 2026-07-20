@@ -1,25 +1,23 @@
 import { motion } from "framer-motion"
 import { fadeUp, stagger, viewport } from "../../lib/motion"
 import { whyChooseUs } from "../../data/howItWorks"
-import Eyebrow from "../ui/Eyebrow"
 import StatementList from "../ui/StatementList"
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="border-t border-white/10 px-6 py-24 md:px-10 md:py-32">
-      <Eyebrow>{whyChooseUs.eyebrow}</Eyebrow>
+    <section id="why-choose-us" className="border-t border-white/10 px-4 py-4 md:px-10">
 
       <motion.h2
         initial="hidden"
         whileInView="show"
         viewport={viewport}
         variants={fadeUp}
-        className="font-display max-w-3xl text-3xl leading-[1.1] font-semibold text-white md:text-5xl"
+        className="font-display max-w-3xl text-4xl leading-[1.05] font-semibold text-white md:text-6xl"
       >
         {whyChooseUs.h2}
       </motion.h2>
 
-      <div className="mt-10 max-w-xl">
+      <div className="mt-4 max-w-xl">
         <StatementList
           lines={whyChooseUs.body}
           lineClassName="text-base leading-relaxed text-white/60"
@@ -32,7 +30,7 @@ export default function WhyChooseUs() {
         whileInView="show"
         viewport={viewport}
         variants={fadeUp}
-        className="mt-14 max-w-2xl"
+        className="mt-5 max-w-2xl"
       >
         <p className="text-sm tracking-wide text-white/50">{whyChooseUs.questionsIntro}</p>
         <motion.ul
@@ -40,7 +38,7 @@ export default function WhyChooseUs() {
           whileInView="show"
           viewport={viewport}
           variants={stagger(0.08)}
-          className="mt-6 space-y-4"
+          className="mt-3 space-y-4"
         >
           {whyChooseUs.questions.map((q) => (
             <motion.li
@@ -54,7 +52,7 @@ export default function WhyChooseUs() {
         </motion.ul>
       </motion.div>
 
-      <div className="mt-14 max-w-xl border-t border-white/10 pt-10">
+      <div className="mt-5 max-w-xl border-t border-white/10 pt-4">
         <StatementList
           lines={whyChooseUs.closing}
           lineClassName="text-base leading-relaxed text-white/60"

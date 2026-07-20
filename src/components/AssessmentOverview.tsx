@@ -3,7 +3,6 @@ import { motion } from "framer-motion"
 import { BarChart3, ChevronDown, Compass, Cpu, Shield, Users, Workflow } from "lucide-react"
 import { fadeUp, stagger, viewport } from "../lib/motion"
 import { assessmentOverview, images } from "../data/content"
-import Eyebrow from "./ui/Eyebrow"
 import SideImage from "./ui/SideImage"
 
 const icons = { Compass, Workflow, Shield, Cpu, Users, BarChart3 }
@@ -79,17 +78,16 @@ function DomainCard({
 
 export default function AssessmentOverview() {
   return (
-    <section id="overview" className="border-t border-white/10 px-6 py-24 md:px-10 md:py-32">
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:items-center sm:gap-12">
+    <section id="overview" className="border-t border-white/10 px-4 py-4 md:px-10">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:items-center sm:gap-6">
         <div className="sm:order-1">
-          <Eyebrow>{assessmentOverview.eyebrow}</Eyebrow>
 
           <motion.h2
             initial="hidden"
             whileInView="show"
             viewport={viewport}
             variants={fadeUp}
-            className="font-display max-w-xl text-3xl leading-[1.1] font-semibold text-white md:text-4xl"
+            className="font-display max-w-xl text-4xl leading-[1.05] font-semibold text-white md:text-5xl"
           >
             {assessmentOverview.h2}
           </motion.h2>
@@ -99,7 +97,7 @@ export default function AssessmentOverview() {
             whileInView="show"
             viewport={viewport}
             variants={fadeUp}
-            className="mt-6 max-w-2xl text-sm leading-relaxed text-white/60 md:text-base"
+            className="mt-3 max-w-2xl text-sm leading-relaxed text-white/60 md:text-base"
           >
             {assessmentOverview.intro}
           </motion.p>
@@ -117,7 +115,7 @@ export default function AssessmentOverview() {
         whileInView="show"
         viewport={viewport}
         variants={stagger(0.08)}
-        className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2"
+        className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2"
       >
         {assessmentOverview.domains.map((domain) => (
           <DomainCard key={domain.title} domain={domain} />
@@ -129,7 +127,7 @@ export default function AssessmentOverview() {
         whileInView="show"
         viewport={viewport}
         variants={fadeUp}
-        className="mt-16 max-w-2xl text-base leading-relaxed text-white/60 md:text-lg"
+        className="mt-3 max-w-2xl text-base leading-relaxed text-white/60 md:text-lg"
       >
         {assessmentOverview.outcome}
       </motion.p>

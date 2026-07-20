@@ -3,7 +3,6 @@ import { motion } from "framer-motion"
 import { ChevronDown, FileText } from "lucide-react"
 import { fadeUp, stagger, viewport } from "../../lib/motion"
 import { deliverables } from "../../data/howItWorks"
-import Eyebrow from "../ui/Eyebrow"
 import StatementList from "../ui/StatementList"
 
 function slugify(text: string) {
@@ -80,20 +79,19 @@ function DeliverableCard({ item }: { item: (typeof deliverables.items)[number] }
 
 export default function Deliverables() {
   return (
-    <section id="deliverables" className="border-t border-white/10 px-6 py-24 md:px-10 md:py-32">
-      <Eyebrow>{deliverables.eyebrow}</Eyebrow>
+    <section id="deliverables" className="border-t border-white/10 px-4 py-4 md:px-10">
 
       <motion.h2
         initial="hidden"
         whileInView="show"
         viewport={viewport}
         variants={fadeUp}
-        className="font-display max-w-3xl text-3xl leading-[1.1] font-semibold text-white md:text-5xl"
+        className="font-display max-w-3xl text-4xl leading-[1.05] font-semibold text-white md:text-6xl"
       >
         {deliverables.h2}
       </motion.h2>
 
-      <div className="mt-10 max-w-2xl">
+      <div className="mt-4 max-w-2xl">
         <StatementList
           lines={deliverables.supporting}
           lineClassName="text-base leading-relaxed text-white/60 md:text-lg"
@@ -106,7 +104,7 @@ export default function Deliverables() {
         whileInView="show"
         viewport={viewport}
         variants={stagger(0.08)}
-        className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2"
+        className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2"
       >
         {deliverables.items.map((item) => (
           <DeliverableCard key={item.title} item={item} />

@@ -12,11 +12,9 @@ export default function TheReality() {
   return (
     <>
       <PageHero
-        eyebrow="The Reality"
         title="Every Business Has Performance Gaps"
         image={images.realityHero}
         imageAlt="Aerial view of a city skyline at dusk"
-        scrollTarget="#reality"
       />
       <Reality />
       <HiddenGaps />

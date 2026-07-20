@@ -5,7 +5,6 @@ import { fadeUp, stagger, viewport } from "../../lib/motion"
 import { faqs } from "../../data/howItWorks"
 import { images } from "../../data/content"
 import { useJsonLd } from "../../lib/useJsonLd"
-import Eyebrow from "../ui/Eyebrow"
 import SideImage from "../ui/SideImage"
 
 function useFaqSchema() {
@@ -72,17 +71,16 @@ export default function FAQ() {
   useFaqSchema()
 
   return (
-    <section id="faq" className="border-t border-white/10 px-6 py-24 md:px-10 md:py-32">
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:items-center sm:gap-12">
+    <section id="faq" className="border-t border-white/10 px-4 py-4 md:px-10">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:items-center sm:gap-6">
         <div className="sm:order-1">
-          <Eyebrow>FAQ</Eyebrow>
 
           <motion.h2
             initial="hidden"
             whileInView="show"
             viewport={viewport}
             variants={fadeUp}
-            className="font-display max-w-xl text-3xl leading-[1.1] font-semibold text-white md:text-4xl"
+            className="font-display max-w-xl text-4xl leading-[1.05] font-semibold text-white md:text-5xl"
           >
             Frequently Asked Questions
           </motion.h2>
@@ -96,7 +94,7 @@ export default function FAQ() {
         whileInView="show"
         viewport={viewport}
         variants={stagger(0.06)}
-        className="mt-14 max-w-3xl border-t border-white/10"
+        className="mt-5 max-w-3xl border-t border-white/10"
       >
         {faqs.map((item) => (
           <FaqItem key={item.q} q={item.q} a={item.a} />

@@ -8,7 +8,7 @@ export default function SubHeading({ children }: { children: string }) {
       whileInView="show"
       viewport={viewport}
       variants={fadeUp}
-      className="font-display text-xl font-medium text-white md:text-2xl"
+      className="font-display text-2xl font-medium text-white md:text-3xl"
     >
       {children}
     </motion.h3>

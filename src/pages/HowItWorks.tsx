@@ -8,7 +8,6 @@ import WhyUs from "../components/how-it-works/WhyUs"
 import FAQ from "../components/how-it-works/FAQ"
 import WhyChooseUs from "../components/how-it-works/WhyChooseUs"
 import FinalCallToAction from "../components/how-it-works/FinalCallToAction"
-import AssessmentForm from "../components/how-it-works/AssessmentForm"
 import TrustBar from "../components/how-it-works/TrustBar"
 import CTABand from "../components/CTABand"
 import { journeyCta } from "../data/howItWorks"
@@ -36,11 +35,9 @@ export default function HowItWorks() {
   return (
     <>
       <PageHero
-        eyebrow="The Process"
         title="How the Assessment Works"
         image={images.howItWorksHero}
         imageAlt="Dark analytics dashboard close-up"
-        scrollTarget="#process"
       />
 
       <AssessmentJourney />
@@ -55,10 +52,6 @@ export default function HowItWorks() {
       <FAQ />
       <WhyChooseUs />
       <FinalCallToAction />
-
-      <section id="assessment-form" className="px-6 py-24 md:px-10 md:py-32">
-        <AssessmentForm />
-      </section>
 
       <TrustBar />
     </>

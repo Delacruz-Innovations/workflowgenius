@@ -1,32 +1,30 @@
 import { motion } from "framer-motion"
 import { fadeUp, viewport } from "../lib/motion"
 import { transition, images } from "../data/content"
-import Eyebrow from "./ui/Eyebrow"
 import StatementList from "./ui/StatementList"
 
 export default function TransitionSection() {
   return (
     <section
       id="transition"
-      className="relative border-t border-white/10 bg-scroll bg-cover bg-center px-6 py-24 md:bg-fixed md:px-10 md:py-32"
+      className="relative border-t border-white/10 bg-scroll bg-cover bg-center px-4 py-4 md:bg-fixed md:px-10"
       style={{ backgroundImage: `url(${images.transitionBg})` }}
     >
       <div className="absolute inset-0 bg-[#0c0c0d]/88" />
 
       <div className="relative mx-auto max-w-3xl text-center">
-        <Eyebrow>{transition.eyebrow}</Eyebrow>
 
         <motion.h2
           initial="hidden"
           whileInView="show"
           viewport={viewport}
           variants={fadeUp}
-          className="font-display text-3xl leading-[1.15] font-semibold text-white md:text-5xl"
+          className="font-display text-4xl leading-[1.1] font-semibold text-white md:text-6xl"
         >
           {transition.h2}
         </motion.h2>
 
-        <div className="mt-12">
+        <div className="mt-4">
           <StatementList
             lines={transition.conditionals}
             lineClassName="text-base text-white/55 md:text-lg"
@@ -34,7 +32,7 @@ export default function TransitionSection() {
           />
         </div>
 
-        <div className="mt-10">
+        <div className="mt-4">
           <StatementList
             lines={transition.pivot}
             lineClassName="text-base text-white/60 md:text-lg"
@@ -57,7 +55,7 @@ export default function TransitionSection() {
           whileInView="show"
           viewport={viewport}
           variants={fadeUp}
-          className="mt-10 text-base text-white/60 md:text-lg"
+          className="mt-4 text-base text-white/60 md:text-lg"
         >
           {transition.followUp}
         </motion.p>
@@ -72,7 +70,7 @@ export default function TransitionSection() {
           {transition.followUpQuestion}
         </motion.p>
 
-        <div className="mt-14 border-t border-white/10 pt-12 text-left">
+        <div className="mt-5 border-t border-white/10 pt-5 text-left">
           <StatementList
             lines={transition.closing}
             lineClassName="text-base leading-relaxed text-white/60 md:text-lg"
