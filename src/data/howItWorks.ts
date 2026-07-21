@@ -246,7 +246,7 @@ export const faqs = [
     a: "Yes. Every assessment concludes with practical, prioritised recommendations supported by evidence and aligned with business objectives.",
   },
   {
-    q: "Am I required to engage Delacruz Innovations afterwards?",
+    q: "I'm required to engage Delacruz Innovations afterwards?",
     a: "No. The BPE360™ Business Performance Assessment is designed to provide independent insights that help you make informed business decisions. Whether you implement the recommendations internally or choose to work with Delacruz Innovations is entirely your decision.",
   },
 ]
@@ -294,7 +294,7 @@ export const trustBar = [
     description: "Every recommendation begins with objective analysis rather than assumptions.",
   },
   {
-    title: "Business Led Approach",
+    title: "Business Outcome Led Approach",
     description: "Business objectives determine technology decisions not the other way around.",
   },
   {

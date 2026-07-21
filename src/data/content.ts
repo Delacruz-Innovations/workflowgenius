@@ -495,6 +495,6 @@ export const footerNav = [
   { label: "The Reality", href: "/the-reality" },
   { label: "Business Impact", href: "/business-impact" },
   { label: "Our Methodology", href: "/methodology" },
-  { label: "How It Works", href: "/how-it-works" },
+  { label: "How We Work", href: "/how-it-works" },
   { label: "FAQ", href: "/faq" },
 ]

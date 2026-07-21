@@ -25,7 +25,7 @@ export default function HowItWorks() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "How It Works",
+        name: "How We Work",
         item: "https://workflowgenius.co/how-it-works",
       },
     ],
