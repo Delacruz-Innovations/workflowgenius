@@ -128,7 +128,7 @@ export const hiddenGaps = {
 
 export const gapAnalysis = {
   eyebrow: "Gap Analysis",
-  h2: "You Can't Improve What You Haven't Diagnosed.",
+  h2: "",
   principle:
     "Every successful improvement programme begins with one principle:",
   principleQuote:
@@ -162,7 +162,7 @@ export const gapAnalysis = {
 
 export const competitorAnalysis = {
   eyebrow: "Competitor Analysis",
-  h2: "Your Biggest Competitor Isn't Standing Still. Why Should Your Business?",
+  h2: "",
   supporting: [
     "The businesses leading their industries are rarely the ones with the biggest budgets.",
     "They are the ones that make better business decisions earlier, faster and with greater confidence.",
