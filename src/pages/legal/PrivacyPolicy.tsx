@@ -1,6 +1,5 @@
 import { useEffect } from "react"
 import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
 import { useJsonLd } from "../../lib/useJsonLd"
 import { fadeUp, stagger } from "../../lib/motion"
 import { trackEvent } from "../../lib/analytics"

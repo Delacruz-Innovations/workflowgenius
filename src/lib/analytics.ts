@@ -38,7 +38,7 @@ function injectGoogleAnalytics(id: string) {
 function injectMetaPixel(id: string) {
   if (window.fbq) return
 
-  const fbq: Window["fbq"] = function (...args: unknown[]) {
+  const fbq: ((...args: unknown[]) => void) & { queue?: unknown[] } = function (...args: unknown[]) {
     ;(fbq.queue = fbq.queue || []).push(args)
   }
   window.fbq = fbq
