@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { X } from "lucide-react"
 import { fadeUp, viewport } from "../../lib/motion"
 import { whyUs } from "../../data/howItWorks"
 import { images } from "../../data/content"
@@ -60,11 +61,12 @@ export default function WhyUs() {
         <p className="font-display mt-3 text-2xl font-semibold text-white md:text-3xl">
           {whyUs.principle}
         </p>
-        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1">
+        <div className="mt-4 space-y-0 border-t border-white/10">
           {whyUs.principleNot.map((line) => (
-            <span key={line} className="text-sm text-white/40">
-              {line}
-            </span>
+            <p key={line} className="flex items-center gap-3 border-b border-white/10 py-3 text-sm text-white/55">
+              <X size={13} className="shrink-0 text-white/40" />
+              {line.replace(/\.$/, "")}
+            </p>
           ))}
         </div>
       </motion.div>

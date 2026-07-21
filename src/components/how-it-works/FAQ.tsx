@@ -5,6 +5,7 @@ import { fadeUp, stagger, viewport } from "../../lib/motion"
 import { faqs } from "../../data/howItWorks"
 import { images } from "../../data/content"
 import { useJsonLd } from "../../lib/useJsonLd"
+import { trackEvent } from "../../lib/analytics"
 import SideImage from "../ui/SideImage"
 
 function useFaqSchema() {
@@ -36,7 +37,10 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         <button
           type="button"
           id={`${id}-trigger`}
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => {
+            trackEvent("faq_toggle", { id, open: !open })
+            setOpen((v) => !v)
+          }}
           aria-expanded={open}
           aria-controls={`${id}-panel`}
           className="flex w-full items-center justify-between gap-4 py-6 text-left"
@@ -67,27 +71,29 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   )
 }
 
-export default function FAQ() {
+export default function FAQ({ standalone = false }: { standalone?: boolean }) {
   useFaqSchema()
 
   return (
     <section id="faq" className="border-t border-white/10 px-4 py-4 md:px-10">
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:items-center sm:gap-6">
-        <div className="sm:order-1">
+      {!standalone && (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:items-center sm:gap-6">
+          <div className="sm:order-1">
 
-          <motion.h2
-            initial="hidden"
-            whileInView="show"
-            viewport={viewport}
-            variants={fadeUp}
-            className="font-display max-w-xl text-4xl leading-[1.05] font-semibold text-white md:text-5xl"
-          >
-            Frequently Asked Questions
-          </motion.h2>
+            <motion.h2
+              initial="hidden"
+              whileInView="show"
+              viewport={viewport}
+              variants={fadeUp}
+              className="font-display max-w-xl text-4xl leading-[1.05] font-semibold text-white md:text-5xl"
+            >
+              Frequently Asked Questions
+            </motion.h2>
+          </div>
+
+          <SideImage src={images.faq} alt="Dark office interior, abstract" side="right" />
         </div>
-
-        <SideImage src={images.faq} alt="Dark office interior, abstract" side="right" />
-      </div>
+      )}
 
       <motion.div
         initial="hidden"

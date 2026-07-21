@@ -55,7 +55,7 @@ export default function FinalCallToAction() {
         >
           <button
             type="button"
-            onClick={open}
+            onClick={() => open("how_it_works_final_cta")}
             className="group inline-flex items-center justify-center gap-3 bg-white px-8 py-4 text-xs font-medium tracking-[0.1em] text-black uppercase transition-transform hover:scale-[1.02]"
           >
             {finalCallToAction.primary.button}

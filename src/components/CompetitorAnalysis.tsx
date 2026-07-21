@@ -19,7 +19,7 @@ export default function CompetitorAnalysis() {
             whileInView="show"
             viewport={viewport}
             variants={fadeUp}
-            className="font-display max-w-xl text-4xl leading-[1.05] font-semibold text-white md:text-5xl"
+            className="font-display max-w-xl text-3xl leading-[1.05] font-semibold text-white md:text-4xl"
           >
             {competitorAnalysis.h2}
           </motion.h2>

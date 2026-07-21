@@ -31,7 +31,7 @@ export default function WhyAssessment() {
 
       <div className="mt-5 grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
-          <p className="text-xs tracking-[0.15em] text-white/55 uppercase">
+          <p className="text-sm font-bold tracking-[0.15em] text-white uppercase">
             What businesses routinely measure
           </p>
           <div className="mt-4 flex flex-wrap gap-2">

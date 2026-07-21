@@ -4,13 +4,14 @@ import { Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
 import { brand } from "../data/content"
 import { useAssessmentModal } from "../context/AssessmentModalContext"
+import { trackEvent } from "../lib/analytics"
 
 const navLinks = [
   { label: "The Reality", href: "/the-reality" },
   { label: "Business Impact", href: "/business-impact" },
   { label: "Our Methodology", href: "/methodology" },
   { label: "How It Works", href: "/how-it-works" },
-  { label: "FAQ", href: "/how-it-works#faq" },
+  { label: "FAQ", href: "/faq" },
 ]
 
 export default function Header() {
@@ -57,7 +58,7 @@ export default function Header() {
 
       <button
         type="button"
-        onClick={openAssessment}
+        onClick={() => openAssessment("header_desktop")}
         className="hidden border border-accent px-5 py-2 text-accent-light transition-colors hover:bg-accent/10 sm:inline-block"
       >
         Start Assessment
@@ -81,7 +82,10 @@ export default function Header() {
               >
                 <Link
                   to={link.href}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    trackEvent("nav_click", { label: link.label, href: link.href })
+                    setOpen(false)
+                  }}
                   className="font-display block py-3 text-3xl font-medium text-white/70 transition-colors hover:text-white sm:text-4xl"
                 >
                   {link.label}
@@ -100,7 +104,7 @@ export default function Header() {
               }}
               onClick={() => {
                 setOpen(false)
-                openAssessment()
+                openAssessment("header_mobile")
               }}
               className="mt-6 inline-flex w-fit items-center justify-center border border-accent px-6 py-3 text-xs font-medium tracking-[0.15em] text-accent-light uppercase transition-colors hover:bg-accent/10"
             >

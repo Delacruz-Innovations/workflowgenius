@@ -54,9 +54,9 @@ export default function AssessmentJourney() {
               <span className="font-display text-3xl font-semibold text-white/35 md:text-4xl">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <p className="mt-1 text-xs tracking-[0.15em] text-white/55 uppercase md:hidden">
+              {/* <p className="mt-1 text-xs tracking-[0.15em] text-white/55 uppercase md:hidden">
                 Step {i + 1}
-              </p>
+              </p> */}
             </div>
 
             <div>

@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { BarChart3, ChevronDown, Compass, Cpu, Shield, Users, Workflow } from "lucide-react"
+import { BarChart3, ChevronDown, Compass, Cpu, Shield, Users, Workflow, X } from "lucide-react"
 import { fadeUp, stagger, viewport } from "../lib/motion"
 import { assessmentOverview, images } from "../data/content"
+import { trackEvent } from "../lib/analytics"
 import SideImage from "./ui/SideImage"
 
 const icons = { Compass, Workflow, Shield, Cpu, Users, BarChart3 }
@@ -32,7 +33,10 @@ function DomainCard({
         <button
           type="button"
           id={`${id}-trigger`}
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => {
+            trackEvent("domain_toggle", { id, open: !open })
+            setOpen((v) => !v)
+          }}
           aria-expanded={open}
           aria-controls={`${id}-panel`}
           className="flex w-full items-center justify-between gap-4 p-6 text-left"
@@ -64,9 +68,10 @@ function DomainCard({
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
         className="overflow-hidden"
       >
-        <ul className="space-y-2 px-6 pb-6 pl-20">
+        <ul className="space-y-0 px-6 pb-6 pl-20">
           {domain.items.map((item) => (
-            <li key={item} className="text-sm text-white/55">
+            <li key={item} className="flex items-center gap-3 border-b border-white/10 py-3 text-sm text-white/70">
+              <X size={13} className="shrink-0 text-white/45" />
               {item}
             </li>
           ))}

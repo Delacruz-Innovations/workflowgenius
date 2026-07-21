@@ -5,7 +5,6 @@ import AssessmentJourney from "../components/how-it-works/AssessmentJourney"
 import Deliverables from "../components/how-it-works/Deliverables"
 import WhoItsFor from "../components/how-it-works/WhoItsFor"
 import WhyUs from "../components/how-it-works/WhyUs"
-import FAQ from "../components/how-it-works/FAQ"
 import WhyChooseUs from "../components/how-it-works/WhyChooseUs"
 import FinalCallToAction from "../components/how-it-works/FinalCallToAction"
 import TrustBar from "../components/how-it-works/TrustBar"
@@ -48,8 +47,8 @@ export default function HowItWorks() {
         heading={journeyCta.heading}
         supporting={journeyCta.lines.join(" ")}
         button={journeyCta.button}
+        source="how_it_works_mid_cta"
       />
-      <FAQ />
       <WhyChooseUs />
       <FinalCallToAction />
 

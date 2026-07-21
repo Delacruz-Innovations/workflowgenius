@@ -25,7 +25,7 @@ export default function Methodology() {
       <EvidenceSection />
       <WhyAssessment />
       <AssessmentOverview />
-      <CTABand {...assessmentCta} />
+      <CTABand {...assessmentCta} source="methodology_final_cta" />
     </>
   )
 }

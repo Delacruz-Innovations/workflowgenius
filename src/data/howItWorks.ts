@@ -90,7 +90,7 @@ export const journey = {
 
 export const deliverables = {
   eyebrow: "What You Receive",
-  h2: "Executive Deliverables Designed for Decision Makers",
+  h2: "Executive Deliverables Designed for Decision Makers.",
   supporting: [
     "The value of an assessment is measured by the quality of the decisions it enables.",
     "Every deliverable is designed for executive leadership teams responsible for strategy, investment and transformation.",

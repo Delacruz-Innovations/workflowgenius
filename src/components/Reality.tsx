@@ -13,7 +13,7 @@ export default function Reality() {
         whileInView="show"
         viewport={viewport}
         variants={fadeUp}
-        className="font-display max-w-2xl text-4xl leading-[1.05] font-semibold whitespace-pre-line text-white md:text-6xl"
+        className="font-display max-w-2xl text-3xl leading-[1.05] font-semibold whitespace-pre-line text-white md:text-5xl"
       >
         {reality.h2}
       </motion.h2>

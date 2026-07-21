@@ -8,11 +8,13 @@ export default function CTABand({
   heading,
   supporting,
   button,
+  source,
 }: {
   id?: string
   heading: string
   supporting: string
   button: string
+  source?: string
 }) {
   const { open } = useAssessmentModal()
 
@@ -35,7 +37,7 @@ export default function CTABand({
 
       <button
         type="button"
-        onClick={open}
+        onClick={() => open(source ?? id ?? "cta_band")}
         className="group mt-4 inline-flex items-center justify-center gap-3 bg-white px-8 py-4 text-xs font-medium tracking-[0.1em] text-black uppercase transition-transform hover:scale-[1.02]"
       >
         {button}

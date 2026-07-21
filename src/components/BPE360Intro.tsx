@@ -38,7 +38,7 @@ export default function BPE360Intro() {
 
       <div className="mt-3 grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
-          <p className="text-xs tracking-[0.15em] text-white/55 uppercase">
+          <p className="text-sm font-bold tracking-[0.15em] text-white uppercase">
             The improvement cycle businesses repeat
           </p>
           <div className="mt-4 flex flex-wrap gap-2">

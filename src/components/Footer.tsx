@@ -1,7 +1,13 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import { fadeUp, viewport } from "../lib/motion"
 import { brand, footerNav } from "../data/content"
 import { footerMicrocopy } from "../data/howItWorks"
+import { trackEvent } from "../lib/analytics"
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "/legal/privacy-policy" },
+]
 
 export default function Footer() {
   return (
@@ -36,22 +42,38 @@ export default function Footer() {
         whileInView="show"
         viewport={viewport}
         variants={fadeUp}
-        className="mt-4 flex flex-col-reverse items-center justify-between gap-6 border-t border-white/10 pt-8 text-xs tracking-wide text-white/60 md:flex-row"
+        className="mt-4 border-t border-white/10 pt-8"
       >
-        <p>&copy; 2026 {brand.domain}. All rights reserved.</p>
-
-        <div className="flex flex-wrap items-center justify-center gap-6">
+        {/* Nav links */}
+        <div className="flex flex-wrap items-center justify-center gap-6 text-xs tracking-wide text-white/55">
           {footerNav.map((link) => (
-            <a key={link.label} href={link.href} className="transition-colors hover:text-white">
+            <Link
+              key={link.label}
+              to={link.href}
+              onClick={() => trackEvent("footer_nav_click", { label: link.label, href: link.href })}
+              className="transition-colors hover:text-white"
+            >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
-        <div className="flex items-center gap-6">
-          <a href="#" className="transition-colors hover:text-white">
-            Privacy Policy
-          </a>
+        {/* Bottom row */}
+        <div className="mt-6 flex flex-col-reverse items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs tracking-wide text-white/45 md:flex-row">
+          <p>&copy; 2026 {brand.domain}. All rights reserved.</p>
+
+          <div className="flex flex-wrap items-center justify-center gap-5">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => trackEvent("footer_legal_click", { label: link.label })}
+                className="transition-colors hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </motion.div>
     </footer>

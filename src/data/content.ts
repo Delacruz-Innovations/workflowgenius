@@ -307,7 +307,7 @@ export const impactAnalysis = {
 
 export const transition = {
   eyebrow: "The Turning Point",
-  h2: "Better Businesses Don't Guess. They Measure. They Prioritise. They Improve.",
+  h2: "Successful Businesses Don't Guess. They Measure. They Prioritise. They Improve.",
   conditionals: [
     "If every business has performance gaps…",
     "If those gaps influence profitability, productivity and growth…",
@@ -496,5 +496,5 @@ export const footerNav = [
   { label: "Business Impact", href: "/business-impact" },
   { label: "Our Methodology", href: "/methodology" },
   { label: "How It Works", href: "/how-it-works" },
-  { label: "FAQ", href: "/how-it-works#faq" },
+  { label: "FAQ", href: "/faq" },
 ]

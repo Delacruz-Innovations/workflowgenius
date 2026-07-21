@@ -42,7 +42,7 @@ export default function PageHero({
               show: { transition: { staggerChildren: 0.045, delayChildren: 0.15 } },
             }}
             className={`font-display max-w-5xl leading-[1.08] font-semibold tracking-tight text-white ${
-              tall ? "text-4xl sm:text-6xl md:text-7xl" : "text-3xl sm:text-5xl md:text-6xl"
+              tall ? "text-5xl sm:text-6xl md:text-7xl" : "text-5xl sm:text-6xl md:text-7xl"
             }`}
           >
             {words.map((word, i) => (

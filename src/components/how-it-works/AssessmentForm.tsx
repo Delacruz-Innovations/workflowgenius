@@ -2,6 +2,7 @@ import { useState, type FormEvent, type InputHTMLAttributes } from "react"
 import { motion } from "framer-motion"
 import { Check, ShieldCheck } from "lucide-react"
 import { leadFormFields, industries, employeeBands } from "../../data/howItWorks"
+import { trackEvent } from "../../lib/analytics"
 
 type FormState = {
   fullName: string
@@ -110,7 +111,12 @@ export default function AssessmentForm() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    if (validate()) setSubmitted(true)
+    if (!validate()) return
+
+    // Client-side only for now — no backend exists yet to confirm a real lead.
+    // Move this to fire on a server-confirmed response once the form is wired to one.
+    trackEvent("generate_lead", { company: form.company, industry: form.industry })
+    setSubmitted(true)
   }
 
   if (submitted) {

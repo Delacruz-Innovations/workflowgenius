@@ -81,7 +81,7 @@ export default function ProblemStatement() {
         <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center">
           <button
             type="button"
-            onClick={open}
+            onClick={() => open("problem_statement")}
             className="group inline-flex items-center justify-center gap-3 bg-white px-6 py-3 text-xs font-medium tracking-[0.1em] text-black uppercase transition-transform hover:scale-[1.02]"
           >
             {ctas.primary}

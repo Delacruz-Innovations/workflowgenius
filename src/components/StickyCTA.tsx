@@ -29,7 +29,7 @@ export default function StickyCTA() {
             </span>
             <button
               type="button"
-              onClick={open}
+              onClick={() => open("sticky_desktop")}
               className="group inline-flex items-center gap-2 bg-white px-5 py-2 text-xs font-medium tracking-[0.1em] text-black uppercase transition-transform hover:scale-[1.02]"
             >
               {finalCta.button}
@@ -49,7 +49,7 @@ export default function StickyCTA() {
           >
             <button
               type="button"
-              onClick={open}
+              onClick={() => open("sticky_mobile")}
               className="flex w-full items-center justify-center gap-2 bg-white py-3 text-xs font-medium tracking-[0.1em] text-black uppercase"
             >
               {finalCta.button}

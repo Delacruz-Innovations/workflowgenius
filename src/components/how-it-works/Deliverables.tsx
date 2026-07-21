@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { ChevronDown, FileText } from "lucide-react"
+import { ChevronDown, FileText, X } from "lucide-react"
 import { fadeUp, stagger, viewport } from "../../lib/motion"
 import { deliverables } from "../../data/howItWorks"
+import { trackEvent } from "../../lib/analytics"
 import StatementList from "../ui/StatementList"
 
 function slugify(text: string) {
@@ -25,7 +26,10 @@ function DeliverableCard({ item }: { item: (typeof deliverables.items)[number] }
         <button
           type="button"
           id={`${id}-trigger`}
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => {
+            trackEvent("deliverable_toggle", { id, open: !open })
+            setOpen((v) => !v)
+          }}
           aria-expanded={open}
           aria-controls={`${id}-panel`}
           className="flex w-full items-center justify-between gap-4 p-6 text-left"
@@ -62,9 +66,10 @@ function DeliverableCard({ item }: { item: (typeof deliverables.items)[number] }
             <p className="mb-2 text-sm text-white/50">{item.description}</p>
           )}
           {item.items.length > 0 && (
-            <ul className="space-y-2">
+            <ul className="space-y-0">
               {item.items.map((line) => (
-                <li key={line} className="text-sm text-white/55">
+                <li key={line} className="flex items-center gap-3 border-b border-white/10 py-3 text-sm text-white/70">
+                  <X size={13} className="shrink-0 text-white/45" />
                   {line}
                 </li>
               ))}
