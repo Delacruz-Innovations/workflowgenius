@@ -33,7 +33,7 @@ export default function PageHero({
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
 
-        <div className="absolute inset-0 flex flex-col justify-center px-4 md:px-14">
+        <div className="absolute inset-0 flex flex-col justify-center px-4 pt-20 pb-10 sm:pt-24 md:px-14 md:pb-14">
           <motion.h1
             initial="hidden"
             animate="show"
@@ -42,7 +42,7 @@ export default function PageHero({
               show: { transition: { staggerChildren: 0.045, delayChildren: 0.15 } },
             }}
             className={`font-display max-w-5xl leading-[1.08] font-semibold tracking-tight text-white ${
-              tall ? "text-5xl sm:text-6xl md:text-7xl" : "text-5xl sm:text-6xl md:text-7xl"
+              tall ? "text-4xl sm:text-6xl md:text-7xl" : "text-4xl sm:text-6xl md:text-7xl"
             }`}
           >
             {words.map((word, i) => (

@@ -19,7 +19,7 @@ export default function Home() {
         imageAlt="Dark glass office tower at dusk"
         tall
         primaryCta={{ label: ctas.primary, onClick: () => open("home_hero") }}
-        secondaryCta={{ label: ctas.secondary, href: "/the-reality" }}
+        
       />
       <ProblemStatement />
     </>
