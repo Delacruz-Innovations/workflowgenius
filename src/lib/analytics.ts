@@ -66,7 +66,13 @@ export function initAnalytics(): void {
 export function trackPageview(path: string): void {
   try {
     if (typeof window.gtag === "function") {
-      window.gtag("event", "page_view", { page_path: path })
+      // page_location (not just page_path) is what GA4 reads to attribute
+      // the session to utm_source/utm_medium/utm_campaign in the URL.
+      window.gtag("event", "page_view", {
+        page_path: path,
+        page_location: window.location.href,
+        ...getStoredUtm(),
+      })
     }
     if (typeof window.fbq === "function") {
       window.fbq("track", "PageView")
