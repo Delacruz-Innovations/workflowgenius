@@ -1,5 +1,5 @@
-import { useEffect } from "react"
 import { useJsonLd } from "../lib/useJsonLd"
+import { useSeo } from "../lib/useSeo"
 import PageHero from "../components/PageHero"
 import FAQ from "../components/how-it-works/FAQ"
 import TrustBar from "../components/how-it-works/TrustBar"
@@ -7,9 +7,12 @@ import CTABand from "../components/CTABand"
 import { images } from "../data/content"
 
 export default function FAQPage() {
-  useEffect(() => {
-    document.title = "Frequently Asked Questions | BPE360™ Business Performance Assessment"
-  }, [])
+  useSeo({
+    title: "Frequently Asked Questions | BPE360™ Business Performance Assessment",
+    description:
+      "Answers to common questions about the BPE360™ Business Performance Assessment — process, timelines, deliverables and what to expect.",
+    path: "/faq",
+  })
 
   useJsonLd({
     "@context": "https://schema.org",

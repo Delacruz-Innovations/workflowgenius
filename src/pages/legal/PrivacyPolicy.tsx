@@ -1,6 +1,6 @@
-import { useEffect } from "react"
 import { motion } from "framer-motion"
 import { useJsonLd } from "../../lib/useJsonLd"
+import { useSeo } from "../../lib/useSeo"
 import { fadeUp, stagger } from "../../lib/motion"
 import { trackEvent } from "../../lib/analytics"
 
@@ -74,9 +74,12 @@ function ContactRow({ label, value }: { label: string; value: string }) {
 }
 
 export default function PrivacyPolicy() {
-  useEffect(() => {
-    document.title = "Privacy Policy | Delacruz Innovations"
-  }, [])
+  useSeo({
+    title: "Privacy Policy | Delacruz Innovations",
+    description: "How Workflow Genius collects, uses and protects your personal information.",
+    path: "/legal/privacy-policy",
+    noindex: true,
+  })
 
   useJsonLd({
     "@context": "https://schema.org",

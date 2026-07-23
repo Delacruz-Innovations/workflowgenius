@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import PageHero from "../components/PageHero"
 import GapAnalysis from "../components/GapAnalysis"
 import BPE360Intro from "../components/BPE360Intro"
@@ -7,11 +6,15 @@ import WhyAssessment from "../components/WhyAssessment"
 import AssessmentOverview from "../components/AssessmentOverview"
 import CTABand from "../components/CTABand"
 import { images, assessmentCta } from "../data/content"
+import { useSeo } from "../lib/useSeo"
 
 export default function Methodology() {
-  useEffect(() => {
-    document.title = "Business Performance Engineering™ | Workflow Genius"
-  }, [])
+  useSeo({
+    title: "Business Performance Engineering™ | Workflow Genius",
+    description:
+      "Explore the BPE360™ methodology — an evidence-based framework for diagnosing business performance gaps across strategy, operations, governance, technology and people.",
+    path: "/methodology",
+  })
 
   return (
     <>

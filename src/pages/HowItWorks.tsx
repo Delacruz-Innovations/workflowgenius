@@ -1,5 +1,5 @@
-import { useEffect } from "react"
 import { useJsonLd } from "../lib/useJsonLd"
+import { useSeo } from "../lib/useSeo"
 import PageHero from "../components/PageHero"
 import AssessmentJourney from "../components/how-it-works/AssessmentJourney"
 import Deliverables from "../components/how-it-works/Deliverables"
@@ -13,9 +13,12 @@ import { journeyCta } from "../data/howItWorks"
 import { images } from "../data/content"
 
 export default function HowItWorks() {
-  useEffect(() => {
-    document.title = "How the BPE360™ Assessment Works | Workflow Genius"
-  }, [])
+  useSeo({
+    title: "How the BPE360™ Assessment Works | Workflow Genius",
+    description:
+      "See exactly how the BPE360™ Business Performance Assessment works, from initial diagnostic to actionable deliverables — and who it's built for.",
+    path: "/how-it-works",
+  })
 
   useJsonLd({
     "@context": "https://schema.org",

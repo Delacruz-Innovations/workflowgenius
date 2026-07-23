@@ -1,15 +1,18 @@
-import { useEffect } from "react"
 import PageHero from "../components/PageHero"
 import ProblemStatement from "../components/ProblemStatement"
 import { images, hero, ctas } from "../data/content"
 import { useAssessmentModal } from "../context/AssessmentModalContext"
+import { useSeo } from "../lib/useSeo"
 
 export default function Home() {
   const { open } = useAssessmentModal()
 
-  useEffect(() => {
-    document.title = "BPE360™ Business Performance Assessment | Improve Business Performance"
-  }, [])
+  useSeo({
+    title: "BPE360™ Business Performance Assessment | Improve Business Performance",
+    description:
+      "Discover hidden business performance gaps before they become expensive problems. Improve profitability, efficiency and strategic execution with an evidence-based Business Performance Assessment.",
+    path: "/",
+  })
 
   return (
     <>
