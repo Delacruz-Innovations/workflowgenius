@@ -2,12 +2,13 @@ import { useJsonLd } from "../lib/useJsonLd"
 import { useSeo } from "../lib/useSeo"
 import PageHero from "../components/PageHero"
 import AssessmentJourney from "../components/how-it-works/AssessmentJourney"
+import WorkflowVideo from "../components/how-it-works/WorkflowVideo"
 import Deliverables from "../components/how-it-works/Deliverables"
 import WhoItsFor from "../components/how-it-works/WhoItsFor"
 import WhyUs from "../components/how-it-works/WhyUs"
 import WhyChooseUs from "../components/how-it-works/WhyChooseUs"
 import FinalCallToAction from "../components/how-it-works/FinalCallToAction"
-import TrustBar from "../components/how-it-works/TrustBar"
+import Testimonials from "../components/how-it-works/Testimonials"
 import CTABand from "../components/CTABand"
 import { journeyCta } from "../data/howItWorks"
 import { images } from "../data/content"
@@ -43,6 +44,7 @@ export default function HowItWorks() {
       />
 
       <AssessmentJourney />
+      <WorkflowVideo />
       <Deliverables />
       <WhoItsFor />
       <WhyUs />
@@ -55,7 +57,7 @@ export default function HowItWorks() {
       <WhyChooseUs />
       <FinalCallToAction />
 
-      <TrustBar />
+      <Testimonials />
     </>
   )
 }

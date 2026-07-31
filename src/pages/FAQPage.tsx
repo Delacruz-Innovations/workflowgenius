@@ -2,7 +2,7 @@ import { useJsonLd } from "../lib/useJsonLd"
 import { useSeo } from "../lib/useSeo"
 import PageHero from "../components/PageHero"
 import FAQ from "../components/how-it-works/FAQ"
-import TrustBar from "../components/how-it-works/TrustBar"
+import Testimonials from "../components/how-it-works/Testimonials"
 import CTABand from "../components/CTABand"
 import { images } from "../data/content"
 
@@ -45,7 +45,7 @@ export default function FAQPage() {
         source="faq_cta"
       />
 
-      <TrustBar />
+      <Testimonials />
     </>
   )
 }

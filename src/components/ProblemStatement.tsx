@@ -1,10 +1,11 @@
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { fadeUp, stagger, viewport } from "../lib/motion"
-import { problem, ctas, images } from "../data/content"
+import { problem, ctas } from "../data/content"
 import StatementList from "./ui/StatementList"
 import TagGrid from "./ui/TagGrid"
-import SideImage from "./ui/SideImage"
+import { PerspectiveCarousel } from "./ui/PerspectiveCarousel"
+import Card3DRing from "./ui/Card3DRing"
 import { useAssessmentModal } from "../context/AssessmentModalContext"
 
 export default function ProblemStatement() {
@@ -14,7 +15,6 @@ export default function ProblemStatement() {
     <section id="problem" className="px-4 py-4 md:px-10">
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:items-center sm:gap-6">
         <div className="sm:order-1">
-
           <motion.h2
             initial="hidden"
             whileInView="show"
@@ -28,32 +28,49 @@ export default function ProblemStatement() {
               </motion.span>
             ))}
           </motion.h2>
+
+          <div className="mt-6 hidden sm:block">
+            <StatementList
+              lines={problem.investments}
+              lineClassName="text-base text-white/60 md:text-lg"
+              className="space-y-2"
+            />
+          </div>
         </div>
 
-        <SideImage src={images.problem} alt="Dim office workspace, abstract" side="right" />
-      </div>
-
-      <div className="mt-3 grid grid-cols-1 gap-6 md:grid-cols-2">
-        <div>
-          <StatementList
-            lines={problem.investments}
-            lineClassName="text-base text-white/60 md:text-lg"
-            className="space-y-2"
+        <div className="hidden items-center justify-center sm:order-2 sm:flex">
+          <Card3DRing
+            items={problem.ringImages.map((src, i) => ({
+              src,
+              label: problem.investments[i % problem.investments.length],
+            }))}
           />
         </div>
+      </div>
 
-        <div>
-          <motion.p
-            initial="hidden"
-            whileInView="show"
-            viewport={viewport}
-            variants={fadeUp}
-            className="mb-4 text-sm tracking-wide text-white/50"
-          >
-            {problem.symptomsIntro}
-          </motion.p>
-          <TagGrid items={problem.symptoms} />
-        </div>
+      <div className="mt-6 h-[420px] w-full sm:hidden">
+        <PerspectiveCarousel
+          loop
+          items={problem.investments.map((line, i) => ({
+            src: problem.investmentImages[i],
+            title: line,
+          }))}
+          labelClassName="text-white/70 text-center max-w-[180px] whitespace-normal"
+          controlsClassName="bottom-2"
+        />
+      </div>
+
+      <div className="mt-6">
+        <motion.p
+          initial="hidden"
+          whileInView="show"
+          viewport={viewport}
+          variants={fadeUp}
+          className="mb-4 text-sm tracking-wide text-white/50"
+        >
+          {problem.symptomsIntro}
+        </motion.p>
+        <TagGrid items={problem.symptoms} />
       </div>
 
       <div className="mt-3 max-w-2xl border-t border-white/10 pt-5">
@@ -90,12 +107,6 @@ export default function ProblemStatement() {
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
           </button>
-          <a
-            href="/the-reality"
-            className="group inline-flex items-center justify-center gap-3 border border-accent px-6 py-3 text-xs font-medium tracking-[0.1em] text-accent-light uppercase transition-colors hover:bg-accent/10"
-          >
-            {ctas.secondary}
-          </a>
         </div>
       </motion.div>
     </section>

@@ -64,12 +64,12 @@ export default function FinalCallToAction() {
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
           </button>
-          <a
+          {/* <a
             href="#"
             className="inline-flex items-center justify-center gap-3 border border-accent px-8 py-4 text-xs font-medium tracking-[0.1em] text-accent-light uppercase transition-colors hover:bg-accent/10"
           >
             {finalCallToAction.secondary.button}
-          </a>
+          </a> */}
         </motion.div>
       </div>
     </section>

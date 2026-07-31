@@ -53,7 +53,10 @@ export default function Header() {
 
       <Link to="/" className="font-display text-sm font-semibold tracking-widest text-white">
         {brand.name}
-        <span className="font-normal text-white/50">.co</span>
+        <span className="font-normal text-white/50">.co</span>{" "}
+        <span className="text-[0.55em] font-normal tracking-normal text-white/40">
+          by Dlacruz Innovations
+        </span>
       </Link>
 
       <button

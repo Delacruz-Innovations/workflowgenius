@@ -1,6 +1,6 @@
 // Paste your own Pinterest (or other) image URLs in below — each key maps to one image slot on the site.
 export const images = {
-  hero: "https://i.pinimg.com/736x/8f/a7/56/8fa7561f66c313a2586b57be91f1f2b2.jpg",
+  hero: "https://i.pinimg.com/736x/80/b3/92/80b392b2022ba48ef01f22973b6d66df.jpg",
   problem: "https://i.pinimg.com/736x/60/4c/18/604c187382d8778d7851c9a49901c3e8.jpg",
   realityHero: "https://i.pinimg.com/736x/18/40/48/18404887c96a375a6908930e6962a61f.jpg",
   reality: "https://i.pinimg.com/736x/f5/25/e8/f525e8bfd2973de3b4d235fd5151c257.jpg",
@@ -43,6 +43,25 @@ export const problem = {
     "Many launch transformation programmes.",
     "Some introduce Artificial Intelligence.",
     "Others restructure teams, redesign processes or hire consultants.",
+  ],
+  investmentImages: [
+    "https://i.pinimg.com/736x/60/4c/18/604c187382d8778d7851c9a49901c3e8.jpg",
+    "https://i.pinimg.com/736x/38/17/f5/3817f5a82bb31192d17ebee9a7479e81.jpg",
+    "https://i.pinimg.com/736x/ed/ed/fa/ededfaeed7225cd780854d8ebb9c8ec5.jpg",
+    "https://i.pinimg.com/736x/2e/6b/00/2e6b005f748ed72f3ff501052d52c526.jpg",
+    "https://i.pinimg.com/736x/a2/5a/fc/a25afc44ac174c14c153e76a63a956ea.jpg",
+  ],
+  ringImages: [
+    "https://i.pinimg.com/736x/60/4c/18/604c187382d8778d7851c9a49901c3e8.jpg",
+    "https://i.pinimg.com/736x/f5/25/e8/f525e8bfd2973de3b4d235fd5151c257.jpg",
+    "https://i.pinimg.com/736x/6b/f1/44/6bf14400e365cbc90200acbfb2468aa0.jpg",
+    "https://i.pinimg.com/736x/d5/fa/87/d5fa870cd59d230bda8f27a05e4fd0c3.jpg",
+    "https://i.pinimg.com/736x/9c/5b/33/9c5b3393c9518cc139a7e4943b83a010.jpg",
+    "https://i.pinimg.com/736x/ed/ed/fa/ededfaeed7225cd780854d8ebb9c8ec5.jpg",
+    "https://i.pinimg.com/736x/2e/6b/00/2e6b005f748ed72f3ff501052d52c526.jpg",
+    "https://i.pinimg.com/736x/a2/5a/fc/a25afc44ac174c14c153e76a63a956ea.jpg",
+    "https://i.pinimg.com/736x/03/dc/02/03dc02885a96ef7e61f5f0bdd80c27d7.jpg",
+    "https://i.pinimg.com/736x/32/31/dc/3231dc6f51d2e1e137d1e9c74d96b84c.jpg",
   ],
   symptomsIntro: "Yet despite these investments, many businesses continue to experience:",
   symptoms: [

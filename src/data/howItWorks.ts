@@ -284,50 +284,173 @@ export const finalCallToAction = {
     "Understand how your business performs today.",
     "The decisions you make next will be significantly better because they are based on evidence rather than assumptions.",
   ],
-  primary: { label: "Start Your Business Performance Assessment", button: "Book My Assessment" },
+  primary: { label: "Start Your Business Performance Assessment", button: "Start Your Business Performance assessment" },
   secondary: { label: "Speak With an Executive Advisor", button: "Schedule an Executive Discovery Session" },
 }
 
-export const trustBar = [
+export const testimonials = [
   {
-    title: "Evidence Before Investment",
-    description: "Every recommendation begins with objective analysis rather than assumptions.",
+    name: "AmalaOnTheGo",
+    location: "Toronto, Canada",
+    logo: "/logos/amalaonthego.png",
+    quote:
+      "WorkflowGenius transformed how we approached our anniversary marketing campaign. From strategy to execution, every deliverable was structured, creative, and focused on measurable business growth. The professionalism and attention to detail exceeded our expectations.",
   },
   {
-    title: "Business Outcome Led Approach",
-    description: "Business objectives determine technology decisions not the other way around.",
+    name: "Benfash",
+    location: "Lagos, Nigeria",
+    logo: "/logos/benfash.png",
+    quote:
+      "Working with Delacruz Innovations through WorkflowGenius gave us clarity and direction. Their structured approach helped streamline our operations while strengthening our brand presence and customer engagement.",
   },
   {
-    title: "Independent Perspective",
-    description: "Objective advice focused on measurable business outcomes.",
+    name: "NHS England",
+    location: "United Kingdom",
+    logo: "/logos/nhs-england.png",
+    quote:
+      "Delacruz Innovations consistently demonstrated strong analytical thinking, stakeholder engagement, and process improvement capabilities. Their structured delivery approach contributed significantly to successful transformation initiatives.",
   },
   {
-    title: "Structured Methodology",
-    description: "Delivered using the Business Performance Engineering™ Framework.",
+    name: "easyJet",
+    location: "United Kingdom",
+    logo: "/logos/easyjet.png",
+    quote:
+      "The team brought exceptional business analysis expertise, translating complex operational challenges into practical solutions. Their collaborative approach ensured successful delivery across multiple stakeholders.",
+  },
+  {
+    name: "Sky Betting & Gaming",
+    location: "United Kingdom",
+    logo: "/logos/sky-betting-and-gaming.png",
+    quote:
+      "WorkflowGenius reflects the same disciplined delivery and business-focused thinking we experienced firsthand. The ability to bridge technology, operations, and customer value was a key strength throughout the engagement.",
+  },
+  {
+    name: "Lloyds Banking Group",
+    location: "United Kingdom",
+    logo: "/logos/lloyds-banking-group.png",
+    quote:
+      "Delacruz Innovations delivered with professionalism, precision, and a deep understanding of business transformation. Their ability to align strategic objectives with execution created measurable value for our programmes.",
+  },
+  {
+    name: "Innosphere Consulting LLC",
+    location: "Dubai, UAE",
+    logo: "/logos/innosphere-consulting.png",
+    quote:
+      "WorkflowGenius has become an essential framework for driving consistency and execution across our consulting engagements. It has improved project visibility, delivery quality, and client satisfaction.",
+  },
+  {
+    name: "EchoHive Creatives",
+    location: "Lagos, Nigeria",
+    logo: "/logos/echohive-creatives.png",
+    quote:
+      "The WorkflowGenius methodology brought structure to our creative operations without limiting innovation. It improved collaboration, accelerated delivery timelines, and helped us focus on delivering greater value to our clients.",
   },
 ]
 
 export const footerMicrocopy = {
   eyebrow: "Business Performance Engineering™",
   tagline: "Helping businesses improve profitability, productivity and performance through evidence based decision making.",
-  poweredBy: "Workflow Genius is powered by Delacruz Innovations.",
+  poweredBy: "by Delacruz Innovations.",
 }
 
 export const leadFormFields = {
   heading: "Start Your Business Performance Assessment",
-  supporting: "Tell us about your business and an advisor will be in touch to scope your assessment.",
+  supporting:
+    "Complete this short form to request your BPE360™ Business Performance Assessment. We'll use your responses to understand your business, prepare for the assessment and arrange your Executive Strategy Session.",
+  estimate: "Estimated completion time: 2 minutes.",
 }
 
-export const industries = [
-  "Financial Services",
-  "Professional Services",
-  "Manufacturing",
-  "Retail & E-commerce",
-  "Healthcare",
-  "Technology",
-  "Real Estate & Construction",
-  "Logistics & Supply Chain",
+export const jobTitles = [
+  "Business Owner",
+  "CEO",
+  "Managing Director",
+  "COO",
+  "CFO",
+  "CTO",
+  "Director",
+  "General Manager",
+  "Operations Manager",
   "Other",
 ]
 
-export const employeeBands = ["1–10", "11–50", "51–200", "201–1,000", "1,000+"]
+export const industries = [
+  "Professional Services",
+  "Manufacturing",
+  "Construction",
+  "Retail",
+  "Healthcare",
+  "Financial Services",
+  "Technology",
+  "Education",
+  "Hospitality",
+  "Logistics",
+  "Energy",
+  "Government",
+  "Non-Profit",
+  "Agriculture",
+  "Real Estate",
+  "Telecommunications",
+  "Other",
+]
+
+export const employeeBands = ["1–10", "11–50", "51–250", "251–500", "501–1,000", "1,001–5,000", "5,000+"]
+
+export const revenueBands = [
+  "Prefer not to say",
+  "Under £500k",
+  "£500k–£5M",
+  "£5M–£25M",
+  "£25M–£100M",
+  "£100M+",
+]
+
+export const priorityOptions = [
+  "Improve business performance",
+  "Increase productivity",
+  "Reduce operational costs",
+  "Improve business processes",
+  "Prepare for AI adoption",
+  "Digital transformation",
+  "Improve governance",
+  "Business growth",
+  "Improve customer experience",
+  "Improve decision-making",
+  "Technology modernisation",
+  "Risk reduction",
+  "Business restructuring",
+  "Preparing for investment",
+  "Other",
+]
+
+export const timelineOptions = [
+  "Immediately",
+  "Within 3 months",
+  "Within 6 months",
+  "Within 12 months",
+  "Exploring options",
+]
+
+export const hearAboutOptions = [
+  "Google Search",
+  "LinkedIn",
+  "Social Media",
+  "Referral",
+  "Delacruz Innovations",
+  "Webinar/Event",
+  "Existing Client",
+  "Other",
+]
+
+export const thankYou = {
+  heading: "Thank You!",
+  body: "Your request has been received.",
+  supporting:
+    "One of our Business Performance Specialists will review your information and contact you within one business day.",
+  nextHeading: "What happens next?",
+  next: [
+    "We review your business information.",
+    "We arrange a discovery conversation.",
+    "We prepare your BPE360™ Business Performance Assessment.",
+    "You receive your Executive Strategy Session.",
+  ],
+}
